@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Mtfk Pro",
+  "description": "Add-on streamlines messaging with appropriate tone and grammar, while also facilitating foreign language communication. Designed by experts, it offers a user-friendly interface and integrates with everything you type in browser. Craft messages that leave an impact with ease using our revolutionary add-on.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "mtfk.html",
+    "default_icon": "images/mtfk-logo.png"
+  },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs"
+    ],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [
+      {
+      "matches": ["*://*/*"],
+      "css": ["mtfk.css"],
+      "js": ["mtfk.js"]
+      }
+  ],
+  "web_accessible_resources": [{
+    "matches": ["*://*/*"],
+    "resources": ["images/mtfk-logo.png"]
+  }]
+}

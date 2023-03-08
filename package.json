@@ -1,0 +1,11 @@
+{
+  "name": "Mtfk Pro",
+  "version": "0.1.0",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "devDependencies": {
+    "parcel": "latest"
+  },
+}
