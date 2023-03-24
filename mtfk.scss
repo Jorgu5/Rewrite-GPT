@@ -1,0 +1,99 @@
+$mtfk-primary-color: #fff;
+$mtfk-secondary-color: #ddd;
+
+@mixin pulse {
+  @keyframes pulse {
+  0% {
+  transform: scale(1);
+}
+  50% {
+  transform: scale(1.1);
+}
+  100% {
+  transform: scale(1);
+}
+}
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.mtfk {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+
+  &__option {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    padding: 5px 10px;
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $mtfk-secondary-color;
+    }
+
+    &::before {
+      margin-right: 5px;
+    }
+
+    &--formal::before {
+      content: "🎓";
+    }
+
+    &--casual::before {
+      content: "👔";
+    }
+
+    &--friendly::before {
+      content: "😎";
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: inline-flex;
+    background-color: $mtfk-primary-color;
+    background-size: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+    @include pulse;
+}
+
+  &__button:hover,
+  &__button:focus {
+    opacity: 0.65;
+    border-color: $mtfk-primary-color;
+}
+
+  &__options {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    background: $mtfk-primary-color;
+    color: #000;
+    z-index: 999;
+    flex-direction: column;
+    width: 200px;
+    padding: 25px 0 10px;
+    &_close {
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 15px;
+
+      &:hover {
+        opacity: 0.65;
+    }
+  }
+}
+}

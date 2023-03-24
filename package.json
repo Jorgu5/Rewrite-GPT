@@ -1,11 +1,24 @@
 {
-  "name": "Mtfk Pro",
+  "name": "mtfk-pro",
   "version": "0.1.0",
-  "source": "src/index.ts",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
   "devDependencies": {
+    "@parcel/config-webextension": "^2.8.3",
+    "@parcel/transformer-inline-string": "2.8.3",
+    "@parcel/transformer-sass": "2.8.3",
+    "@parcel/transformer-webextension": "^2.8.3",
     "parcel": "latest"
   },
+  "scripts": {
+    "start": "parcel watch manifest.json --host localhost --port 8080",
+    "build": "parcel build manifest.json"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.7.0",
+    "eslint": "^8.36.0",
+    "eslint-config-xtrict": "^3.0.1",
+    "parcel-plugin-web-ext-tool": "^0.2.2",
+    "typescript": "^5.0.2",
+    "web-ext": "^7.6.0",
+    "webextension-polyfill-ts": "^0.26.0"
+  }
 }
