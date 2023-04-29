@@ -1,0 +1,101 @@
+@import 'toggle-checkbox';
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.mtfk-settings {
+  *[hidden] {
+    display: none;
+  }
+
+  &--context {
+    width: 450px;
+  }
+
+  &__form {
+    &_fieldset {
+      margin: 10px 0;
+      border: 1px solid #aaa;
+
+      label {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+      }
+
+      legend {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      input[type=checkbox],
+      input[type=radio] {
+        margin-right: 5px;
+      }
+
+      input[name$="-shortcut"] {
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 4px 8px;
+      }
+
+      &-inner {
+        display: flex;
+        flex-direction: column;
+
+        > label {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px;
+
+          > select {
+            width: 100%;
+          }
+        }
+      }
+
+      &--context {
+        display: block;
+
+        > label {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__tooltip {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  &__current-context {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__assistant-info_text {
+    font-size: 10px;
+    color: #aaaaaa;
+    display: block;
+  }
+
+  &__submit-button[type=submit] {
+    margin-top: 20px;
+    background: #000;
+    border-radius: 2px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

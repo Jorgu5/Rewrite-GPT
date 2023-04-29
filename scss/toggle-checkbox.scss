@@ -1,0 +1,71 @@
+.mtfk__toggle {
+  // Hide the default checkbox
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  // Create the switch container
+  position: relative;
+  display: inline-block;
+  height: 22px;
+
+  // Style the text label
+  &_text {
+    display: inline-block;
+    padding-left: 50px;
+    line-height: 22px;
+    vertical-align: middle;
+  }
+
+  // Create the slider
+  &_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    left: 0;
+    width: 33px;
+    height: 15px;
+    background-color: #aaa;
+    transition: 0.4s;
+    border-radius: 22px; // Add a rounded shape to the slider and the container
+
+    // Add a round shape to the slider
+    &:before {
+      position: absolute;
+      content: "";
+      height: 10px;
+      width: 10px;
+      left: 2.5px;
+      bottom: 2.5px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%; // Add a rounded shape to the slider
+    }
+  }
+
+  input:checked {
+    // Change the background color and move the slider when checked
+    + .mtfk__toggle_text + .mtfk__toggle_slider {
+      background-color: #2196f3;
+    }
+
+    + .mtfk__toggle_text + .mtfk__toggle_slider:before {
+      transform: translateX(17px);
+    }
+  }
+
+  // Grey out the toggle when input is disabled
+  input:disabled {
+    + .mtfk__toggle_text + .mtfk__toggle_slider {
+      background-color: #e0e0e0;
+      cursor: not-allowed;
+    }
+
+    + .mtfk__toggle_text + .mtfk__toggle_slider:before {
+      background-color: #b0b0b0;
+    }
+  }
+}

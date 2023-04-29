@@ -1,5 +1,3 @@
-import { usePreferredTone } from "./utilities";
-
 export function getCompletion(promptText: string, promptTone: string, apiKey: string, url: string): Promise<any> {
     const requestOptions: RequestInit = {
         method: 'POST',
@@ -9,7 +7,7 @@ export function getCompletion(promptText: string, promptTone: string, apiKey: st
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: usePreferredTone(promptText, promptTone) }]
+            // messages: [{ role: "user", content: usePreferredTone(promptText, promptTone) }]
         }),
     };
 

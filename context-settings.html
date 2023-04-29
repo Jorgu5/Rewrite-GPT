@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<main>
+    <section class="mtfk-settings mtfk-settings--context">
+        <form class="mtfk-settings__form">
+            <fieldset class="mtfk-settings__form_fieldset">
+                <legend class="mtfk-settings__legend"> Toggle MTFK
+                </legend>
+                <label class="mtfk__toggle">
+                    <input name="disable-mtfk" type="checkbox" value="context">
+                    <span class="mtfk__toggle_text">Turn off Mtfk for this site</span>
+                    <span class="mtfk__toggle_slider"></span>
+                </label>
+            </fieldset>
+            <fieldset class="mtfk-settings__form_fieldset mtfk-settings__form_fieldset--context" name="context">
+                <legend><span class="mtfk-settings__current-context"></span>&hairsp;context
+                    settings
+                </legend>
+                <label for="global-mtfk">
+                    <input checked id="global-mtfk" name="global-mtfk" type="radio">
+                    Use &hairsp;<a class="advanced-options" href="#">global settings</a>
+                </label>
+                <label for="context-mtfk">
+                    <input id="context-mtfk" name="global-mtfk" type="radio" value="context">
+                    Use custom settings for the &hairsp;<span class="mtfk-settings__current-context"></span>
+                </label>
+                <fieldset class="mtfk-settings__form_fieldset mtfk-settings__form_fieldset--tones" hidden
+                          id="featured-context-settings"
+                          name="context-settings">
+                    <legend class="mtfk-settings__legend">Which features should be enabled for this website? <a
+                            class="mtfk-settings__tooltip"
+                            href="#"><img
+                            alt="additional info about this input change" height="15" src="images/info-thin.svg"
+                            width="15"/></a></legend>
+                    <label class="mtfk__toggle"><input checked name="adjust-tone" type="checkbox">
+                        <span class="mtfk__toggle_text">Adjust Tone</span>
+                        <span class="mtfk__toggle_slider"></span>
+                    </label>
+                    <label class="mtfk__toggle"><input checked name="spelling" type="checkbox">
+                        <span class="mtfk__toggle_text">Quick grammar and spelling fix</span>
+                        <span class="mtfk__toggle_slider"></span>
+                    </label>
+                    <label class="mtfk__toggle"><input checked name="compose" type="checkbox">
+                        <span class="mtfk__toggle_text">Compose</span>
+                        <span class="mtfk__toggle_slider"></span>
+                    </label>
+                    <label class="mtfk__toggle"><input checked name="writer-assistant" type="checkbox">
+                        <span class="mtfk__toggle_text">Writer Assistant</span>
+                        <span class="mtfk__toggle_slider"></span>
+                    </label>
+                    <span class="mtfk-settings__assistant-info_text" hidden>When using Writer Assistant, other features are automatically disabled since it already provides accurate grammar, spelling, and tone in the generated text, though some users may find it slower and have a better experience on writing their own text and rewrite with MTFK. </span>
+                </fieldset>
+                <fieldset class="mtfk-settings__form_fieldset" hidden id="output-context-settings"
+                          name="context-settings">
+                    <legend class="mtfk-settings__legend">Output Settings</legend>
+                    <label class="mtfk__toggle"><input checked name="spelling" type="checkbox">
+                        <span class="mtfk__toggle_text">Allow MTFK to learn and fine-tune your tone from this site<a
+                                class="mtfk-settings__tooltip" href="#"><img
+                                alt="additional info about this input change"
+                                height="15" src="images/info-thin.svg"
+                                width="15"/></a></span>
+                        <span class="mtfk__toggle_slider"></span>
+                    </label>
+                    <label class="mtfk__toggle"><input disabled name="default-brand-tone" type="checkbox" value="brand">
+                        <span class="mtfk__toggle_text">Use <strong><u>your trained tone</u></strong> as default<a
+                                class="mtfk-settings__tooltip" href="#"><img
+                                alt="additional info about this input change"
+                                height="15" src="images/info-thin.svg"
+                                width="15"/></a></span>
+                        <span class="mtfk__toggle_slider"></span>
+                    </label>
+                    <div class="mtfk-settings__form_fieldset-inner">
+                        <label>Default Tone:
+                            <select name="default-tones">
+                                <option value="your">My own tone</option>
+                                <option value="formal">Formal</option>
+                                <option value="informal">Informal</option>
+                                <option value="humorous">Humorous</option>
+                                <option value="serious">Serious</option>
+                                <option value="optimistic">Optimistic</option>
+                                <option value="motivating">Motivating</option>
+                                <option value="respectful">Respectful</option>
+                                <option value="assertive">Assertive</option>
+                                <option value="conversational">Conversational</option>
+                            </select>
+                        </label>
+                        <label>Output text length
+                            <select name="default-length">
+                                <option value="long">Shorten</option>
+                                <option value="short">Lengthen</option>
+                                <option value="original">Keep the same length as your input</option>
+                                <option value="custom">Custom length</option>
+                            </select>
+                        </label>
+                        <label hidden><input name="custom-length" placeholder="Length in words count"
+                                             style="grid-column: 1 / -1"
+                                             type="number"></label>
+                        <label>Assistant Trigger: X Words <input default="5"
+                                                                 min="5"
+                                                                 name="complete-sentences"
+                                                                 placeholder="5"
+                                                                 type="number"> </label>
+                    </div>
+                </fieldset>
+            </fieldset>
+        </form>
+        Go to <a class="advanced-options" href="#">advanced options</a>
+    </section>
+</main>
+<script src="/ts/settings/ContextOptions.ts" type="module"></script>
+<link href="/scss/options.scss" rel="stylesheet">
+</body>
+</html>
+
+
