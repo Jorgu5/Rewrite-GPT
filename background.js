@@ -2,7 +2,7 @@ const url = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
 let port = null;
 
 chrome.storage.local.set({
-    apiKey: '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',
+    apiKey: 'sk-gptopenapikey',
 });
 
 console.log('check');
